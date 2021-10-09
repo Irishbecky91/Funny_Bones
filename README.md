@@ -1,6 +1,6 @@
 # Funny Bones
 
-![Headless Horseman Game Mockup Images](readme-files/responsive-site.PNG)
+![Funny Bones Mockup Images](readme-files/responsive-site.PNG)
 
 [View the live project here](https://github.com/Irishbecky91/Funny_Bones)
 
