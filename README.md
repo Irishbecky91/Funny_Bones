@@ -1,8 +1,8 @@
-# Do You Sudoku?
+# Funny Bones
 
 ![Headless Horseman Game Mockup Images](readme-files/responsive-site.PNG)
 
-[View the live project here](https://github.com/Irishbecky91/Headless_Horseman_Game)
+[View the live project here](https://github.com/Irishbecky91/Funny_Bones)
 
 ## Table of contents
 1. [Introduction](#Introduction)
@@ -38,7 +38,7 @@
 
 ## Introduction
 
-For the Portfolio Project 3 - Python Essentials, the developer decided to build a hangman type game. Instead of a hanged man being drawn, a halloween themed "Headless Horseman" and his steed are created when incorrect words or letters are input.
+For the Portfolio Project 3 - Python Essentials, the developer decided to build a hangman type game. Instead of a hanged man being drawn, a halloween themed skeleton, "Funny Bones", is created when incorrect words or letters are input.
 
 The main requirements of this project are to build a command-line application that allows the user to manage a common dataset about a particular domain.
 
@@ -54,16 +54,18 @@ The ideal user for this website is:
 
 #### New User Goals
 1. As a new user, I want to see clear instruction for gameplay. 
-2. As a new user, I want to see interesting visuals.
+2. As a new user, I want to see a visual representation of my remaining lives.
 3. As a new user, I want the ability to replay the game.
 
 #### Current User
-1. As a current user, I want to have a unique experience each time I play.
-2. As a current user, I want to see a theme for the word choice.
-3. As a current user, I want additional themes and images in the future. 
-<!-- 
+1. As a current user, I want to the ability to replay the game.
+2. As a current user, I want the guess word to follow a certain theme.
+3. As a current user, I want the choice to use different themes. 
+
+
 ### Development-Planes
-To create an interactive website that allows the user to play the game Sudoku, with the option of various game settings to challenge and entertain the user.
+To create a command-line application that allows the user to play a word guess game, "Funny Bones".
+
 
 #### Strategy
 Strategy incorporates user needs as well as product objectives. This website will focus on the following target audience, divided into three main categories:
@@ -78,33 +80,27 @@ Strategy incorporates user needs as well as product objectives. This website wil
 - **Psychographic:**
     - Lifestyles:
         - Interest in games
-        - Interest in numbers
+        - Interest in halloween
         - Interest in puzzles
     - Personality/Attitudes:
         - Focused
         - Forward-Thinking
-        - Arithmetically minded
+        - Creative
     
-The website needs to enable the **user** to:
-- play the game sudoku with their choice of game settings:
-    - Difficulties of easy, normal, hard or hardcore.
-    - Timer lengths of 3 minutes, 5 minutes or 10 minutes.
-    - Page themes of light, dark, coffee and unicorn.
-- generate a new board on each play-through:
-    - Randomly generated boards using an algorithm.
-    - Premade boards based on difficulty
+The application needs to enable the **user** to:
+- play the game "Funny Bones" using only alpha character.
+- generate a new word on each play-through by sourcing a random word from an external list of words.
     
 With the above information in mind, a strategy table was created to show the trade-offs between what is important and what is viable with the following results.
-
 
 <details>
 <summary>Strategy Plane - Viability/Feasibility Table</summary>
 
-![Strategy Table](assets/readme-files/strategy-table.PNG)
+![Strategy Table](readme_files/strategy_table.PNG)
 
 </details>
 
-
+<!--
 #### Scope
 The scope plane is about defining requirements based on the goals established on the strategy plane. Using the information in the strategy plane, the identified required features have been broken into the following two categories.
 - Content Requirements:
