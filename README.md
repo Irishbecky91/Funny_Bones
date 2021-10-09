@@ -96,7 +96,7 @@ With the above information in mind, a strategy table was created to show the tra
 <details>
 <summary>Strategy Plane - Viability/Feasibility Table</summary>
 
-![Strategy Table](readme_files/strategy_table.PNG)
+![Strategy Table](readme_files/flowcharts_and_tables/strategy_table.PNG)
 
 </details>
 
