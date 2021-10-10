@@ -4,6 +4,11 @@ from word_list import spooky_words
 
 # List of variables to be used in functions.
 word_choice = random.choice(spooky_words)
+complete_word = "_" * len(word_choice)
+guessed = False
+guessed_letters = []
+guessed_words = []
+tries = 6
 
 
 # List of Functions to run game.
@@ -18,12 +23,19 @@ def choose_spooky_word(word_choice):
         return word_choice.upper
 
 
-def start_game():
+def start_game(word_choice):
     """
     This function will start the game, using the other
     functions where needed.
     """
-    pass
+    print("WELCOME TO FUNNY BONES!!")
+    print("\n")
+    print("To play the game you must guess the letters that make up the")
+    print("hidden word. If you think you know what the word is, you can")
+    print("enter it and find out. BUT, if you get a letter or word wrong")
+    print("you better watch out... Because Funny Bones will will come for")
+    print("you! You can only guess wrong six times, so be careful!")
+    print("\n")
 
 
 def input_prev_guessed():
@@ -66,10 +78,12 @@ def tries_remaining():
     pass
 
 
-def main():
-    "This function runs all other functions as needed"
-    pass
+# def main():
+#     "This function runs all other functions as needed"
+#     pass
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
+
+start_game(word_choice)
