@@ -1,24 +1,25 @@
 import random
 from word_list import spooky_words
 
-
 # List of variables to be used in functions.
 word_choice = random.choice(spooky_words)
 hidden_word = "_" * len(word_choice)
 guessed_letters = []
 guessed_words = []
+tries = 6
+guessed = False
 
 
 # List of Functions to run game.
-def choose_spooky_word(word_choice):
+def choose_spooky_word():
     """
     This function will be used to choose a random word from
     the external list of words in the word_list.py file.
     This will be the word the user must guess before running
     out of tries.
     """
-    if word_choice == str.isalpha():
-        return word_choice.upper
+    global word_choice
+    return word_choice.upper
 
 
 def play_game(word_choice):
@@ -26,12 +27,6 @@ def play_game(word_choice):
     This function will start the game, using the other
     functions where needed.
     """
-    global tries
-    global guessed
-    tries = 6
-    guessed = False
-    play_game = input("Do you want to play?")
-
     print("WELCOME TO FUNNY BONES!!")
     print("\n")
     print("To play the game you must guess the letters that make up the")
@@ -40,6 +35,7 @@ def play_game(word_choice):
     print("you better watch out... Because Funny Bones will will come for")
     print("you! You can only guess wrong six times, so be careful!")
     print("\n")
+    play_game = input("Do you want to play?")
     print(play_game)
 
     while not guessed and tries > 0:
@@ -60,7 +56,7 @@ def input_guess():
             print("You already guessed ", users_input, ". Please try again.")
         elif users_input not in word_choice:
             print(
-                "Uh-oh! ", users_input, " is not in the word. Please try again"
+                users_input, " is not in the word. Please try again"
                 )
             global tries
             tries -= 1
@@ -198,7 +194,11 @@ def tries_remaining():
 
 def main():
     "This function runs all other functions as needed"
-    pass
+    word_choice = choose_spooky_word()
+    play_game(word_choice)
+    while input("Would you like to play again? (Y/N) ").upper() == "Y":
+        word_choice = choose_spooky_word()
+        play_game(word_choice)
 
 
 if __name__ == "__main__":
