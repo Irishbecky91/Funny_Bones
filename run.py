@@ -19,32 +19,10 @@ def choose_spooky_word():
     out of tries.
     """
     global word_choice
-    return word_choice.upper
+    return word_choice.upper()
 
 
-def play_game(word_choice):
-    """
-    This function will start the game, using the other
-    functions where needed.
-    """
-    print("WELCOME TO FUNNY BONES!!")
-    print("\n")
-    print("To play the game you must guess the letters that make up the")
-    print("hidden word. If you think you know what the word is, you can")
-    print("enter it and find out. BUT, if you get a letter or word wrong")
-    print("you better watch out... Because Funny Bones will will come for")
-    print("you! You can only guess wrong six times, so be careful!")
-    print("\n")
-    play_game = input("Do you want to play?")
-    print(play_game)
-
-    while not guessed and tries > 0:
-        global users_input
-        users_input = input("Please enter your guess here: ").upper()
-        input_guess()
-
-
-def input_guess():
+def input_guess(users_input):
     """
     This function will check if the letter or word input is alpha only, and
     has not been input previously. If it either/both are false, an error
@@ -97,13 +75,40 @@ def game_over():
             )
 
 
-def tries_remaining():
+def play_game(word_choice):
+    """
+    This function will start the game, using the other
+    functions where needed.
+    """
+    print("WELCOME TO FUNNY BONES!!")
+    print("\n")
+    print("To play the game you must guess the letters that make up the")
+    print("hidden word. If you think you know what the word is, you can")
+    print("enter it and find out. BUT, if you get a letter or word wrong")
+    print("you better watch out... Because Funny Bones will will come for")
+    print("you! You can only guess wrong six times, so be careful!")
+    print("\n")
+    print("Let's Play!")
+    print(tries_remaining(tries))
+    print(hidden_word)
+    print("\n")
+    # If the user has not run out of tries,
+    # continue to request additional inputs
+    while not guessed and tries > 0:
+        global users_input
+        users_input = input("Please enter your guess here: ").upper()
+        input_guess(users_input)
+
+
+def tries_remaining(tries):
     """
     This function contains the images associated with the remaining tries.
     If the user has used up all tries, Funny Bones will be fully formed on
     the screen and the userr will lose.
     """
-    various_stages = ["""
+    various_stages = [  # Seventh and final Image - Full Skeleton
+                        # No tries remaining.
+                      """
                                          _____
                                        /       \\
                                       | |\\   /| |
@@ -121,6 +126,8 @@ def tries_remaining():
                                     \\\\           //
                                 =====o           o=====
                       """,
+                        # Sixth Image - Torso, legs and arms
+                        # One try remaining
                       """
                          \\ || /                         \\ || /
                           \\||/_     o============o      _\\||/
@@ -136,6 +143,8 @@ def tries_remaining():
                                     \\\\           //
                                 =====o           o=====
                       """,
+                        # Fifth Image - Torso, legs and arm
+                        # Two tries remaining
                       """
                          \\ || /
                           \\||/_    o============o
@@ -152,6 +161,8 @@ def tries_remaining():
                                 =====o           o=====
 
                       """,
+                        # Fourth Image - Torso and legs
+                        # Three tries remaining.
                       """
                              o============o
                                 ___||___
@@ -166,6 +177,8 @@ def tries_remaining():
                              \\\\           //
                          =====o           o=====
                       """,
+                        # Third Image - Torso and leg
+                        # Four tries remaining.
                       """
                              o============o
                                 ___||___
@@ -180,6 +193,8 @@ def tries_remaining():
                              \\\\
                          =====o
                       """,
+                        # Second Image - Torso
+                        # Five tries remaining.
                       """
                          o============o
                             ___||___
@@ -187,6 +202,10 @@ def tries_remaining():
                             ___||___
                              __||__
                             |______|
+                      """,
+                        # First Image - Blank
+                        # Six tries remaining
+                      """
                       """
                       ]
     return various_stages[tries]
