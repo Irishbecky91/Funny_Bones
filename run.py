@@ -28,6 +28,8 @@ def start_game(word_choice):
     This function will start the game, using the other
     functions where needed.
     """
+    play_game = input("Do you want to play?")
+
     print("WELCOME TO FUNNY BONES!!")
     print("\n")
     print("To play the game you must guess the letters that make up the")
@@ -36,54 +38,48 @@ def start_game(word_choice):
     print("you better watch out... Because Funny Bones will will come for")
     print("you! You can only guess wrong six times, so be careful!")
     print("\n")
+    print(play_game)
 
 
-def input_prev_guessed():
+def input_guess():
     """
-    This function will check if the letter of word input
-    has been input previously. If so, an error message will
-    be displayed and the user will be asked to enter another
+    This function will check if the letter or word input is alpha only, and
+    has not been input previously. If it either/both are false, an error
+    message will be displayed and the user will be asked to enter another
     character.
-    """
-    pass
-
-
-def alpha_only_input():
-    """
-    This function will check that the user's input character
-    is alpha only. If there is a non-alpha or numeric
-    character, an error message will be displayed and the user
-    will be asked to input another character.
     """
     pass
 
 
 def game_over():
     """
-    This function will check if the user has run out of tries,
-    input all letters in the word, or entered the correct word.
-    If the user runs out of tries, a lose message will be displayed.
-    If the user enters all letter or a whole word correctly, a
-    win message will be displayed.
+    This function will check if the user has run out of tries, input all
+    letters in the word, or entered the correct word. If the user runs out
+    of tries, a lose message will be displayed. If the user enters all
+    letter or a whole word correctly, a win message will be displayed.
     """
-    pass
+    if guessed:
+        print("You did it, you guessed the word correctly! You win!")
+    else:
+        print(
+            "Sorry, you didn't win this time. The word was \n"
+            + word_choice + ". Maybe next time!"
+            )
 
 
 def tries_remaining():
     """
-    This function contains the images associated with the remaining
-    tries. If the user has used up all tries, Funny Bones will be
-    fully formed on the screen and the userr will lose.
+    This function contains the images associated with the remaining tries.
+    If the user has used up all tries, Funny Bones will be fully formed on
+    the screen and the userr will lose.
     """
     pass
 
 
-# def main():
-#     "This function runs all other functions as needed"
-#     pass
+def main():
+    "This function runs all other functions as needed"
+    pass
 
 
-# if __name__ == "__main__":
-#     main()
-
-start_game(word_choice)
+if __name__ == "__main__":
+    main()
