@@ -22,29 +22,28 @@ def choose_spooky_word():
     return word_choice.upper()
 
 
-def input_guess(users_input):
+def input_letter(guess):
     """
-    This function will check if the letter or word input is alpha only, and
+    This function will check if the letter input is alpha only, and
     has not been input previously. If it either/both are false, an error
     message will be displayed and the user will be asked to enter another
     character.
     """
-    if len(users_input) == 1 and users_input.isalpha():
-        if users_input in guessed_letters:
-            print("You already guessed ", users_input, ". Please try again.")
-        elif users_input not in word_choice:
-            print(
-                users_input, " is not in the word. Please try again"
-                )
-            global tries
-            tries -= 1
-            guessed_letters.append(users_input)
-        else:
-            print("Nice one! ", users_input, " is in the word!")
-            add_to_hidden_word()
+    if guess in guessed_letters:
+        print("You already guessed ", guess, ". Please try again.")
+    elif guess not in word_choice:
+        print(
+            guess, "is not in the word. Please try again"
+            )
+        global tries
+        tries -= 1
+        guessed_letters.append(guess)
+    else:
+        print("Well done! ", guess, "is in the word!")
+        add_to_hidden_word(guess)
 
 
-def add_to_hidden_word():
+def add_to_hidden_word(guess):
     global hidden_word
     guessed_letters.append(word_choice)
     word_choice_as_list = list(hidden_word)
@@ -57,6 +56,34 @@ def add_to_hidden_word():
     if "_" not in hidden_word:
         global guessed
         guessed = True
+
+
+def input_word(guess):
+    if guess in guessed_words:
+        print("You already guessed ", guess, ". Please try again.")
+    elif guess != word_choice:
+        print(
+            guess, "is not the word. Please try again"
+            )
+        global tries
+        tries -= 1
+        guessed_words.append(guess)
+    else:
+        global guessed, hidden_word
+        guessed = True
+        hidden_word = word_choice
+
+
+def users_input(guess):
+    if len(guess) == 1 and guess.isalpha():
+        input_letter(guess)
+    elif len(guess == len(word_choice) and guess.isalpha()):
+        input_word(guess)
+    else:
+        print("This is not a valid guess. Please try again.")
+    print(tries_remaining(tries))
+    print(hidden_word)
+    print("\n")
 
 
 def game_over():
@@ -95,16 +122,16 @@ def play_game(word_choice):
     # If the user has not run out of tries,
     # continue to request additional inputs
     while not guessed and tries > 0:
-        global users_input
-        users_input = input("Please enter your guess here: ").upper()
-        input_guess(users_input)
+        global guess
+        guess = input("Please enter your guess here: ").upper()
+        users_input(guess)
 
 
 def tries_remaining(tries):
     """
     This function contains the images associated with the remaining tries.
     If the user has used up all tries, Funny Bones will be fully formed on
-    the screen and the userr will lose.
+    the screen and the user will lose.
     """
     various_stages = [  # Seventh and final Image - Full Skeleton
                         # No tries remaining.
