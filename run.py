@@ -2,12 +2,14 @@ import random
 from word_list import spooky_words
 
 # List of variables to be used in functions.
-word_choice = random.choice(spooky_words)
-hidden_word = "_" * len(word_choice)
+global word_choice
+word_choice = ""
+hidden_word = ""
 guessed_letters = []
 guessed_words = []
 tries = 6
 guessed = False
+guess = ""
 
 
 # List of Functions to run game.
@@ -19,17 +21,19 @@ def choose_spooky_word():
     out of tries.
     """
     global word_choice
-    return word_choice.upper()
+    word_choice = random.choice(spooky_words).upper()
+    return word_choice
 
 
-def add_to_hidden_word():
+def add_to_hidden_word(guess):
     """
-    This function adds the correct letter or word to the hiddn word
+    This function adds the correct letter or word to the hidden word
     in the terminal. It changes the hidden word into a list and adds
     the letters to the correct index within the list, or shows the
     correctly guessed word and ends the game.
     """
     global guessed, hidden_word
+    hidden_word = "_" * len(word_choice)
     guessed_letters.append(guess)
     word_choice_as_list = list(hidden_word)
     indices = [
@@ -58,10 +62,11 @@ def input_letter(guess):
         global tries
         tries -= 1
         guessed_letters.append(guess)
+        print(guess, word_choice)
     else:
         print("Well done! ", guess, "is in the word!")
         print("guess is correct and not previously used works")
-        add_to_hidden_word()
+        add_to_hidden_word(guess)
 
 
 def input_word(guess):
@@ -81,12 +86,14 @@ def input_word(guess):
     else:
         guessed = True
         hidden_word = word_choice
+        print("Congratulations, you won!! You defeated Funny Bones before \
+            he could rise up and take over Halloween.")
 
 
 def users_input(guess):
     """
     This function checks if the user input a letter, a word,
-    or an invalid entry. Each condition will activate a different 
+    or an invalid entry. Each condition will activate a different
     function.
     """
     if len(guess) == 1 and guess.isalpha():
@@ -137,7 +144,7 @@ def play_game(word_choice):
     # If the user has not run out of tries,
     # continue to request additional inputs
     while not guessed and tries > 0:
-        global guess
+        # global guess
         guess = input("Please enter your guess here: ").upper()
         users_input(guess)
 
