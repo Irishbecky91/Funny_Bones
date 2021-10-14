@@ -2,7 +2,7 @@ import random
 from word_list import spooky_words
 
 # List of variables to be used in functions.
-global word_choice
+global word_choice, hidden
 word_choice = ""
 hidden_word = ""
 guessed_letters = []
@@ -62,10 +62,8 @@ def input_letter(guess):
         global tries
         tries -= 1
         guessed_letters.append(guess)
-        print(guess, word_choice)
     else:
         print("Well done! ", guess, "is in the word!")
-        print("guess is correct and not previously used works")
         add_to_hidden_word(guess)
 
 
@@ -128,6 +126,7 @@ def play_game(word_choice):
     This function will start the game, using the other
     functions where needed.
     """
+    global hidden_word
     print("WELCOME TO FUNNY BONES!!")
     print("\n")
     print("To play the game you must guess the letters that make up the")
@@ -139,7 +138,6 @@ def play_game(word_choice):
     print("Let's Play!")
     print(tries_remaining(tries))
     print(hidden_word)
-    print("The hidden word is " + word_choice)
     print("\n")
     # If the user has not run out of tries,
     # continue to request additional inputs
@@ -235,7 +233,7 @@ def tries_remaining(tries):
                                 ___||___
                                  __||__
                                 |______|
-                         o=======o    o=======o
+                         o=======o
                           \\\\
                            \\\\
                             \\\\
@@ -265,6 +263,9 @@ def main():
     word_choice = choose_spooky_word()
     play_game(word_choice)
     while input("Would you like to play again? (Y/N) ").upper() == "Y":
+        global guessed, hidden_word
+        hidden_word = "_" * len(word_choice)
+        guessed = False
         word_choice = choose_spooky_word()
         play_game(word_choice)
 
