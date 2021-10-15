@@ -136,90 +136,23 @@ The imagery used in the game is a skeleton named Funny Bones. The image is made 
 
 [Back to top ⇧](#)
 
-<!--
 
 ## Features
-### Design Features
-The .
-
-<dl>
-    <dt><a href="https://irishbecky91.github.io/Do-you-Sudoku/index.html" target="_blank" alt="Home Page">Home Page</a></dt>
-    <dd>
-        The <em>Home Page</em> is a scrollable page with the main content divided into two columns on larger screens, shifting into a single column on smaller screens.
-        <ul>
-            <li>
-                <em>Image</em> - This image shows the businessman Maki Kaji, to whom the site is dedicated to. there is also a link below the image to the site the image was sourced from. 
-            </li>
-            <li>
-                <em>Introduction</em> - This text-only section tells the user about the origin of Sudoku, and of the man that created it.
-            </li>            
-        </ul>
-    </dd>
-</dl>
-<dl>
-    <dt><a href="https://irishbecky91.github.io/Do-you-Sudoku/instructions.html" target="_blank" alt="Instructions Page">Instructions Page</a></dt>
-    <dd>
-        The <em>Instructions Page</em> is a scrollable text-only page. It shows the users the rules of playing Sudoku.
-        <ul>
-            <li>
-                <em>Instructions</em> - This text-only section introduces the user to the rules of playing Sudoku. 
-            </li>
-        </ul>
-    </dd>
-</dl>
-<dl>
-    <dt><a href="https://irishbecky91.github.io/Do-you-Sudoku/game.html" target="_blank" alt="Game Page">Game Page</a></dt>
-    <dd>
-        The <em>Game Page</em> is a scrollable page that generates a Sudoku game based on the users chosen game settings.
-        <ul>
-            <li>
-                <em>Game Options</em> - This is a bar below the navigation bar that shows the three different settings available to the user, shown below. 
-            </li>
-            <li>
-                <em>Difficulty Settings</em> - This input section allows the user to select the difficulty level of the sudoku puzzle they wish to play. There are four pre-programmed board layouts available; easy, medium, hard and hardcore. The options are labelled using icons from <a href="https://fontawesome.com/" aria-label="Link to Font Awesome's Website" target="_blank">Font Awesome</a>.
-            </li>
-            <li>
-                <em>Timer Settings</em> - This input section allows the user to select the length of time they wish to play for. There are three available options; 3 minutes, 5 minutes and 10 minutes.
-            </li>
-            <li>
-                <em>Theme Settings</em> - This input section allows the user to select the theme they wish to see while playing the game. There are four available options; Light, Dark, Coffee and Unicorn.
-            </li>
-            <li>
-                <em>Start New Game Button</em> - This button, when clicked, starts the game with the users desired settings. This button triggers the JavaScript function which generates a Sudoku board based on saved board layouts and solutions.
-            </li>
-            <li>
-                <em>Timer</em> - This section contains a countdown timer, using the users chosen time selection. If the time runs out, the game is lost.
-            </li>
-            <li>
-                <em>Remaining Lives</em> - This section shows the number of remaining lives, as well as the win or lose message when a game ends. If the user runs out of lives, the game is lost.
-            </li>
-            <li>
-                <em>Sudoku Grid</em> - This grid of 9x9 squares is created using a JavaScript function when the Start New Game button is clicked. A series of Sudoku board and solution pairs were saved as separate arrays, one for each difficulty setting. If both a square within the grid and a number from the number selector is clicked, the number from the selector is inserted into the square. If the user fills in the entire grid with lives and time remaining, the game is won.
-            </li>
-            <li>
-                <em>Number Selector</em> - This section contains nine divs with numbers, from 1 to 9, in each box. When a number and a square are both clicked, the number transfers to the square
-            </li>
-        </ul>
-    </dd>
-</dl>
-
 ### Existing Features
-- **Header** - Appearing on every page for brand recognition.
-- **Navigation Bar** - Appearing on every page for a consistently easy and intuitive navigable system.
-- **Social Media Icons** - Appearing on every page, the icons are appropriate representations of the Social Media platforms, linking users to the developers GitHub and LinkedIn accounts. The icons appear in the centre of the footer, on either side of some text.
-- **[Home Page](https://irishbecky91.github.io/Do-you-Sudoku/index.html "Do You Sudoku? - Home Page")** - Introducing the user to a very brief history of Sudoku.
-- **[Instructions Page](https://irishbecky91.github.io/Do-you-Sudoku/instructions.html "Do You Sudoku? - Instructions Page")** - Informing the user of the rules of playing Sudoku.
-- **[Game Page](https://irishbecky91.github.io/Do-you-Sudoku/game.html "Do You Sudoku? - Game Page")** - Creates a custom Sudoku game using the users chosen settings.
+- **Input Bar** - In order to progress the game, the user will use the input bar to input their next guess, either a letter or word.
+- **Replay Choice** - At the end of each game, win or lose, the user will be offered the choice to play again by entering either Y (yes) or any other character to end the game.
+- **Visual Representation of Lives Remaining** - Each time the user enters an incorrect guess, a section of Funny Bones the skeleton will appear. When Funny Bones is completed, the game is lost.
+- **Instructions and Introduction** - At the beginning of each game, a brief introduction to Funny Bones and the instructions is shown, telling the user how to play the game.
 
 ### Features to Implement in the future
-- **Sudoku Grid Generator**
-     - **Feature** - Uses an algorithm to produce solvable sudoku puzzles based on the users chosen difficulty settings.
+- **Additional Themes**
+     - **Feature** - A set of additional themes will be available to the user to play.
      - **Reason for not featuring in this release** - A lack of experience and time prevented the developer from making this feature upon release. This feature will be developed and implemented in the future to improve repeat play by users.
 
 [Back to top ⇧](#)
 
 
-
+<!--
 ## Issues and Bugs 
 The developer ran into several issues during the development of the website, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
 
