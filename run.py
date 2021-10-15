@@ -2,7 +2,7 @@ import random
 from word_list import spooky_words
 
 # List of variables to be used in functions.
-global word_choice, hidden
+global word_choice, hidden_word
 word_choice = ""
 hidden_word = ""
 guessed_letters = []
