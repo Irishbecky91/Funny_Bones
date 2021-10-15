@@ -144,7 +144,7 @@ def play_game(word_choice):
     # continue to request additional inputs
     while not guessed and tries > 0:
         # global guess
-        guess = input("Please enter your guess here: ").upper()
+        guess = input("Please enter your guess here: \n").upper()
         users_input(guess)
 
 
@@ -265,7 +265,7 @@ def main():
     word_choice = choose_spooky_word()
     hidden_word = "_" * len(word_choice)
     play_game(word_choice)
-    while input("Would you like to play again? (Y/N) ").upper() == "Y":
+    while input("Would you like to play again? (Y/N) \n").upper() == "Y":
         global guessed, hidden_word
         guessed = False
         word_choice = choose_spooky_word()
