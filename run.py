@@ -9,11 +9,12 @@ from word_list import spooky_words
 
 # List of variables to be used in functions.
 WORD_CHOICE = ""
+HIDDEN_WORD = ""
 guessed_letters = []
 guessed_words = []
 TRIES = 6
 GUESSED = False
-guess = ""
+GUESS = ""
 
 
 # List of Functions to run game.
@@ -29,7 +30,7 @@ def choose_spooky_word():
     return WORD_CHOICE
 
 
-def add_to_hidden_word(guess):
+def add_to_hidden_word(GUESS):
     """
     This function adds the correct letter or word to the hidden word
     in the terminal. It changes the hidden word into a list and adds
@@ -37,55 +38,54 @@ def add_to_hidden_word(guess):
     correctly guessed word and ends the game.
     """
     global GUESSED, HIDDEN_WORD
-    guessed_letters.append(guess)
-    HIDDEN_WORD = ""
+    guessed_letters.append(GUESS)
     word_choice_as_list = list(HIDDEN_WORD)
     indices = [
-        i for i, letter in enumerate(WORD_CHOICE) if letter == guess
+        i for i, letter in enumerate(WORD_CHOICE) if letter == GUESS
     ]
     for index in indices:
-        word_choice_as_list[index] = guess
+        word_choice_as_list[index] = GUESS
         HIDDEN_WORD = "".join(word_choice_as_list)
     if "_" not in HIDDEN_WORD:
         GUESSED = True
 
 
-def input_letter(guess):
+def input_letter(GUESS):
     """
     This function will check if the letter input is alpha only, and
     has not been input previously. If it either/both are false, an error
     message will be displayed and the user will be asked to enter another
     character.
     """
-    if guess in guessed_letters:
-        print("You already guessed ", guess, ". Please try again.")
-    elif guess not in WORD_CHOICE:
+    if GUESS in guessed_letters:
+        print("You already guessed ", GUESS, ". Please try again.")
+    elif GUESS not in WORD_CHOICE:
         print(
-            guess, "is not in the word. Please try again"
+            GUESS, "is not in the word. Please try again"
             )
         global TRIES
         TRIES -= 1
-        guessed_letters.append(guess)
+        guessed_letters.append(GUESS)
     else:
         global HIDDEN_WORD
-        print("Well done! ", guess, "is in the word!")
-        add_to_hidden_word(guess)
+        print("Well done! ", GUESS, "is in the word!")
+        add_to_hidden_word(GUESS)
 
 
-def input_word(guess):
+def input_word(GUESS):
     """
     This function checks if a guessed word has been guessed previously,
     is in the word choice, or if it is the hidden word.
     """
     global GUESSED, HIDDEN_WORD, WORD_CHOICE, TRIES
-    if guess in guessed_words:
-        print("You already guessed ", guess, ". Please try again.")
-    elif guess != WORD_CHOICE:
+    if GUESS in guessed_words:
+        print("You already guessed ", GUESS, ". Please try again.")
+    elif GUESS != WORD_CHOICE:
         print(
-            guess, "is not the word. Please try again"
+            GUESS, "is not the word. Please try again"
             )
         TRIES -= 1
-        guessed_words.append(guess)
+        guessed_words.append(GUESS)
     else:
         GUESSED = True
         HIDDEN_WORD = WORD_CHOICE
@@ -93,16 +93,16 @@ def input_word(guess):
             he could rise up and take over Halloween.")
 
 
-def users_input(guess):
+def users_input(GUESS):
     """
     This function checks if the user input a letter, a word,
     or an invalid entry. Each condition will activate a different
     function.
     """
-    if len(guess) == 1 and guess.isalpha():
-        input_letter(guess)
-    elif len(guess) == len(WORD_CHOICE) and guess.isalpha():
-        input_word(guess)
+    if len(GUESS) == 1 and GUESS.isalpha():
+        input_letter(GUESS)
+    elif len(GUESS) == len(WORD_CHOICE) and GUESS.isalpha():
+        input_word(GUESS)
     else:
         print("This is not a valid guess. Please try again.")
     print(tries_remaining(TRIES))
@@ -149,8 +149,8 @@ def play_game(WORD_CHOICE):
     # continue to request additional inputs
     while not GUESSED and TRIES > 0:
         # global guess
-        guess = input("Please enter your guess here: \n").upper()
-        users_input(guess)
+        GUESS = input("Please enter your guess here: \n").upper()
+        users_input(GUESS)
 
 
 def tries_remaining(TRIES):
