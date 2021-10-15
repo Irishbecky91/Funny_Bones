@@ -270,8 +270,9 @@ def main():
     HIDDEN_WORD = "_" * len(WORD_CHOICE)
     play_game(WORD_CHOICE)
     while input("Would you like to play again? (Y/N) \n").upper() == "Y":
-        global guessed
+        global guessed, TRIES
         guessed = False
+        TRIES = 6
         WORD_CHOICE = choose_spooky_word()
         HIDDEN_WORD = "_" * len(WORD_CHOICE)
         play_game(WORD_CHOICE)
