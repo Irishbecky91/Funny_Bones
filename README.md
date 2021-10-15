@@ -100,20 +100,19 @@ With the above information in mind, a strategy table was created to show the tra
 
 </details>
 
-<!--
 #### Scope
 The scope plane is about defining requirements based on the goals established on the strategy plane. Using the information in the strategy plane, the identified required features have been broken into the following two categories.
 - Content Requirements:
     - The user will be looking for:
         - Clear and concise instructions.
-        - Choice of puzzle layouts; easy, normal, hard or hardcore.
-        - Choice of timer length; 3 minutes, 5 minutes or 10 minutes.
-        - Choice of page theme; light, dark, coffee and unicorn.
+        - A consistant theme, such as Halloween 
 - Functionality Requirements:
     - The user will be able to:
-        - Be able to easily navigate the site to find the play instructions.
-        - Be able to tailor the game to their preferences.
+        - Enter either a letter or a whole word if they think they know it.
+        - Replay the game.
+        - End the program at the end of the game.
 
+<!--
 #### Structure
 The information above was then organized in a hierarchical tree structure, a site map, showing how users can navigate through the site with ease and efficiency, with the following results:
 
