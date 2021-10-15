@@ -33,7 +33,6 @@ def add_to_hidden_word(guess):
     correctly guessed word and ends the game.
     """
     global guessed, hidden_word
-    hidden_word = "_" * len(word_choice)
     guessed_letters.append(guess)
     word_choice_as_list = list(hidden_word)
     indices = [
@@ -63,6 +62,7 @@ def input_letter(guess):
         tries -= 1
         guessed_letters.append(guess)
     else:
+        global hidden_word
         print("Well done! ", guess, "is in the word!")
         add_to_hidden_word(guess)
 
@@ -138,6 +138,7 @@ def play_game(word_choice):
     print("Let's Play!")
     print(tries_remaining(tries))
     print(hidden_word)
+    print(word_choice)
     print("\n")
     # If the user has not run out of tries,
     # continue to request additional inputs
@@ -260,13 +261,15 @@ def tries_remaining(tries):
 
 def main():
     "This function runs all other functions as needed"
+    global hidden_word
     word_choice = choose_spooky_word()
+    hidden_word = "_" * len(word_choice)
     play_game(word_choice)
     while input("Would you like to play again? (Y/N) ").upper() == "Y":
         global guessed, hidden_word
-        hidden_word = "_" * len(word_choice)
         guessed = False
         word_choice = choose_spooky_word()
+        hidden_word = "_" * len(word_choice)
         play_game(word_choice)
 
 
