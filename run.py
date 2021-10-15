@@ -1,14 +1,19 @@
+"""
+This is the submission project for Portfolio Project 3.
+The programme made by the developer is a hangman type 
+game using a halloween theme and a skeleton instead of 
+a hanged man.
+"""
 import random
 from word_list import spooky_words
 
 # List of variables to be used in functions.
-global word_choice, hidden_word
-word_choice = ""
-hidden_word = ""
+WORD_CHOICE = ""
+HIDDEN_WORD = ""
 guessed_letters = []
 guessed_words = []
-tries = 6
-guessed = False
+TRIES = 6
+GUESSED = False
 guess = ""
 
 
@@ -20,9 +25,9 @@ def choose_spooky_word():
     This will be the word the user must guess before running
     out of tries.
     """
-    global word_choice
-    word_choice = random.choice(spooky_words).upper()
-    return word_choice
+    global WORD_CHOICE
+    WORD_CHOICE = random.choice(spooky_words).upper()
+    return WORD_CHOICE
 
 
 def add_to_hidden_word(guess):
@@ -32,17 +37,17 @@ def add_to_hidden_word(guess):
     the letters to the correct index within the list, or shows the
     correctly guessed word and ends the game.
     """
-    global guessed, hidden_word
+    global GUESSED, HIDDEN_WORD
     guessed_letters.append(guess)
-    word_choice_as_list = list(hidden_word)
+    word_choice_as_list = list(HIDDEN_WORD)
     indices = [
-        i for i, letter in enumerate(word_choice) if letter == guess
+        i for i, letter in enumerate(WORD_CHOICE) if letter == guess
     ]
     for index in indices:
         word_choice_as_list[index] = guess
-        hidden_word = "".join(word_choice_as_list)
-    if "_" not in hidden_word:
-        guessed = True
+        HIDDEN_WORD = "".join(word_choice_as_list)
+    if "_" not in HIDDEN_WORD:
+        GUESSED = True
 
 
 def input_letter(guess):
@@ -54,15 +59,15 @@ def input_letter(guess):
     """
     if guess in guessed_letters:
         print("You already guessed ", guess, ". Please try again.")
-    elif guess not in word_choice:
+    elif guess not in WORD_CHOICE:
         print(
             guess, "is not in the word. Please try again"
             )
-        global tries
-        tries -= 1
+        global TRIES
+        TRIES -= 1
         guessed_letters.append(guess)
     else:
-        global hidden_word
+        global HIDDEN_WORD
         print("Well done! ", guess, "is in the word!")
         add_to_hidden_word(guess)
 
@@ -72,18 +77,18 @@ def input_word(guess):
     This function checks if a guessed word has been guessed previously,
     is in the word choice, or if it is the hidden word.
     """
-    global guessed, hidden_word, word_choice, tries
+    global GUESSED, HIDDEN_WORD, WORD_CHOICE, TRIES
     if guess in guessed_words:
         print("You already guessed ", guess, ". Please try again.")
-    elif guess != word_choice:
+    elif guess != WORD_CHOICE:
         print(
             guess, "is not the word. Please try again"
             )
-        tries -= 1
+        TRIES -= 1
         guessed_words.append(guess)
     else:
-        guessed = True
-        hidden_word = word_choice
+        GUESSED = True
+        HIDDEN_WORD = WORD_CHOICE
         print("Congratulations, you won!! You defeated Funny Bones before \
             he could rise up and take over Halloween.")
 
@@ -96,12 +101,12 @@ def users_input(guess):
     """
     if len(guess) == 1 and guess.isalpha():
         input_letter(guess)
-    elif len(guess) == len(word_choice) and guess.isalpha():
+    elif len(guess) == len(WORD_CHOICE) and guess.isalpha():
         input_word(guess)
     else:
         print("This is not a valid guess. Please try again.")
-    print(tries_remaining(tries))
-    print(hidden_word)
+    print(tries_remaining(TRIES))
+    print(HIDDEN_WORD)
     print("\n")
 
 
@@ -112,21 +117,21 @@ def game_over():
     of tries, a lose message will be displayed. If the user enters all
     letter or a whole word correctly, a win message will be displayed.
     """
-    if guessed:
+    if GUESSED:
         print("You did it, you guessed the word correctly! You win!")
     else:
         print(
             "Sorry, you didn't win this time. The word was " +
-            word_choice + ". Maybe next time!"
+            WORD_CHOICE + ". Maybe next time!"
             )
 
 
-def play_game(word_choice):
+def play_game(WORD_CHOICE):
     """
     This function will start the game, using the other
     functions where needed.
     """
-    global hidden_word
+    global HIDDEN_WORD
     print("WELCOME TO FUNNY BONES!!")
     print("\n")
     print("To play the game you must guess the letters that make up the")
@@ -136,19 +141,19 @@ def play_game(word_choice):
     print("you! You can only guess wrong six times, so be careful!")
     print("\n")
     print("Let's Play!")
-    print(tries_remaining(tries))
-    print(hidden_word)
-    print(word_choice)
+    print(tries_remaining(TRIES))
+    print(HIDDEN_WORD)
+    print(WORD_CHOICE)
     print("\n")
     # If the user has not run out of tries,
     # continue to request additional inputs
-    while not guessed and tries > 0:
+    while not GUESSED and TRIES > 0:
         # global guess
         guess = input("Please enter your guess here: \n").upper()
         users_input(guess)
 
 
-def tries_remaining(tries):
+def tries_remaining(TRIES):
     """
     This function contains the images associated with the remaining tries.
     If the user has used up all tries, Funny Bones will be fully formed on
@@ -256,21 +261,21 @@ def tries_remaining(tries):
                       """
                       """
                       ]
-    return various_stages[tries]
+    return various_stages[TRIES]
 
 
 def main():
     "This function runs all other functions as needed"
-    global hidden_word
-    word_choice = choose_spooky_word()
-    hidden_word = "_" * len(word_choice)
-    play_game(word_choice)
+    global HIDDEN_WORD, WORD_CHOICE
+    WORD_CHOICE = choose_spooky_word()
+    HIDDEN_WORD = "_" * len(WORD_CHOICE)
+    play_game(WORD_CHOICE)
     while input("Would you like to play again? (Y/N) \n").upper() == "Y":
-        global guessed, hidden_word
+        global guessed, HIDDEN_WORD
         guessed = False
-        word_choice = choose_spooky_word()
-        hidden_word = "_" * len(word_choice)
-        play_game(word_choice)
+        WORD_CHOICE = choose_spooky_word()
+        HIDDEN_WORD = "_" * len(WORD_CHOICE)
+        play_game(WORD_CHOICE)
 
 
 if __name__ == "__main__":
