@@ -38,7 +38,7 @@
 
 ## Introduction
 
-For the Portfolio Project 3 - Python Essentials, the developer decided to build a hangman type game. Instead of a hanged man being drawn, a halloween themed skeleton, "Funny Bones", is created when incorrect words or letters are input.
+For the Portfolio Project 3 - Python Essentials, the developer decided to build a hangman type game. Instead of a hanged man being drawn, a Halloween themed skeleton, "Funny Bones", is created when incorrect words or letters are input.
 
 The main requirements of this project are to build a command-line application that allows the user to manage a common dataset about a particular domain.
 
@@ -53,12 +53,12 @@ The ideal user for this website is:
 * Current user
 
 #### New User Goals
-1. As a new user, I want to see clear instruction for gameplay. 
+1. As a new user, I want to see clear instructions for gameplay. 
 2. As a new user, I want to see a visual representation of my remaining lives.
 3. As a new user, I want the ability to replay the game.
 
 #### Current User
-1. As a current user, I want to the ability to replay the game.
+1. As a current user, I want the ability to replay the game.
 2. As a current user, I want the guess word to follow a certain theme.
 3. As a current user, I want the choice to use different themes. 
 
@@ -80,7 +80,7 @@ Strategy incorporates user needs as well as product objectives. This website wil
 - **Psychographic:**
     - Lifestyles:
         - Interest in games
-        - Interest in halloween
+        - Interest in Halloween
         - Interest in puzzles
     - Personality/Attitudes:
         - Focused
@@ -88,7 +88,7 @@ Strategy incorporates user needs as well as product objectives. This website wil
         - Creative
     
 The application needs to enable the **user** to:
-- play the game "Funny Bones" using only alpha character.
+- play the game "Funny Bones" using only alpha characters.
 - generate a new word on each play-through by sourcing a random word from an external list of words.
     
 With the above information in mind, a strategy table was created to show the trade-offs between what is important and what is viable with the following results.
@@ -100,72 +100,47 @@ With the above information in mind, a strategy table was created to show the tra
 
 </details>
 
+
 #### Scope
 The scope plane is about defining requirements based on the goals established on the strategy plane. Using the information in the strategy plane, the identified required features have been broken into the following two categories.
 - Content Requirements:
     - The user will be looking for:
         - Clear and concise instructions.
-        - A consistant theme, such as Halloween 
+        - A consistent theme, such as Halloween 
 - Functionality Requirements:
     - The user will be able to:
         - Enter either a letter or a whole word if they think they know it.
         - Replay the game.
         - End the program at the end of the game.
 
-<!--
+
 #### Structure
-The information above was then organized in a hierarchical tree structure, a site map, showing how users can navigate through the site with ease and efficiency, with the following results:
-
-
-<details>
-<summary>Site Map</summary>
-
-![Site Map](assets/readme-files/sitemap.PNG)
-
-</details>
+The project will be deployed to a Heroku terminal. There will be no styling aside from the image of Funny Bones built using special characters within the terminal. 
 
 
 #### Skeleton
-Wireframes were made to showcase the appearance of the site pages while keeping a positive user experience in mind. The wireframes were created using a desktop version of [Balsamiq](https://balsamiq.com/).
+A flowchart was created to show the logic the functions would follow. This flowchart was created using the flowcharts template on [Lucid](https://lucid.app/).
 
 
 <details>
-<summary>Balsamiq Wireframes</summary>
+<summary>Lucid Flowchart</summary>
     
-![Site Wireframes](assets/readme-files/Balsamiq-Wireframes.PNG)
+![Lucid Flowchart](readme_files/flowcharts_and_tables/flowchart.png)
 
 </details>
 
 
 ### Design
-#### Colour Scheme
-The default colour scheme throughout the site was chosen to have a warm and comforting appearance. The warm tones and simple design are designed to encourage the user to take a little time and enjoy a relaxing puzzle. 
-
-On the game page, the user is given the option of four themes use while playing the game, making the experience more personalised. The light and dark themes are designed to give a simple, minimalistic platform to play on. There is little to no colour aside from the whites and dark greys in these themes. This will allow the user to focus solely on the puzzle without distraction.
-
-The coffee theme is meant to resemble a cup of coffee a user may be enjoying while using the puzzle on a quick break. The colours are warm and inviting, creating a perfectly relaxing platform for play.
-
-The unicorn theme is designed to represent a little more fun. The bright and varied colours, used in a gradient, form a rainbow across the body of the page. This theme is to appeal to users with a sense of fun and whimsy. It is also designed to give visual stimulation to users who may need a busy screen to be able to focus.
-
-
-#### Typography
-The typography pairing used on the site is [Rampart One](https://fonts.google.com/specimen/Rampart+One?query=ramp) and [Roboto](https://fonts.google.com/specimen/Roboto), imported from [Google Fonts](https://fonts.google.com/). A backup of Sans-Serif had been applied in case of import failure.
-
-Rampart One was chosen for all headers, with Open Sans being used for standard text. This offers a clear font that is easy to read, while still having a nice design.
-
 #### Imagery
-The image on the home page was sourced from an article on The Sydney Morning Herald's website. A note was placed below the image, with a link to the article for the user to follow.
+The imagery used in the game is a skeleton named Funny Bones. The image is made using only special and alpha characters. This image was chosen to match the Halloween theme chosen for the game. The initial image was of a skeleton stood upright which turned out to be too long for the terminal window. This was substituted for a crouching skeleton, making the appearance more intimidating also.
 
 [Back to top ⇧](#)
 
-
+<!--
 
 ## Features
 ### Design Features
-Each page within the site has a consistent and responsive navigation system. The details of features on the site are detailed below.
-- The **Header** is across the top of the page. It is not static as this would cover too much of the screen.
-- The **Navigation Bar** is positioned directly below the header.
-- The **Footer** stays at the bottom of the screen at all times, on all screen sizes. Both social media links on the footer open in a new tab. Additionally, both links open to the developer's profiles in LinkedIn and GitHub. The icons are positioned on either side of some text showing "Created by Rebecca Rayner".
+The .
 
 <dl>
     <dt><a href="https://irishbecky91.github.io/Do-you-Sudoku/index.html" target="_blank" alt="Home Page">Home Page</a></dt>
