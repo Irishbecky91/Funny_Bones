@@ -143,7 +143,6 @@ def play_game(WORD_CHOICE):
     print("Let's Play!")
     print(tries_remaining(TRIES))
     print(HIDDEN_WORD)
-    print(WORD_CHOICE)
     print("\n")
     # If the user has not run out of tries,
     # continue to request additional inputs
