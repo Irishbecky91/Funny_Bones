@@ -1,7 +1,7 @@
 """
 This is the submission project for Portfolio Project 3.
-The programme made by the developer is a hangman type 
-game using a halloween theme and a skeleton instead of 
+The programme made by the developer is a hangman type
+game using a halloween theme and a skeleton instead of
 a hanged man.
 """
 import random
@@ -9,7 +9,6 @@ from word_list import spooky_words
 
 # List of variables to be used in functions.
 WORD_CHOICE = ""
-HIDDEN_WORD = ""
 guessed_letters = []
 guessed_words = []
 TRIES = 6
@@ -39,6 +38,7 @@ def add_to_hidden_word(guess):
     """
     global GUESSED, HIDDEN_WORD
     guessed_letters.append(guess)
+    HIDDEN_WORD = ""
     word_choice_as_list = list(HIDDEN_WORD)
     indices = [
         i for i, letter in enumerate(WORD_CHOICE) if letter == guess
