@@ -203,8 +203,6 @@ The developer ran into several issues during the development of the website, wit
 ## Testing
 ### Testing User Stories
 
-#### Current User Goals:
-
 #### New User Goals:
 1. As a new user, I want to see clear instructions for gameplay.
   - when the program is run, an introduction appears, telling the user how to play the game.
@@ -235,17 +233,96 @@ The developer ran into several issues during the development of the website, wit
 ### Common Elements Testing
 Manual testing was conducted on the following elements that appear in the program:
      
-- Clicking on the Navigation Bar's links will bring the user to the specified page.
+- Inputing a letter would tell the user if the entry is correct of incorrect. The image of the skeleton is built with every incorrect entry.
 
 <details>
-<summary>Navbar page links</summary>
+<summary>Letter Input</summary>
 
-![Navbar page links](readme_files/Testing/navbar-function.gif)
+![Letter Input](readme_files/Testing/input_letter.gif)
 
 </details>
-     
 
      
+- Inputing a non-alpha character will display a message to the user telling them the character is not a valid guess.
+
+<details>
+<summary>Invalid Character Input</summary>
+
+![Invalid Character Input](readme_files/Testing/input_invalid_character.gif)
+
+</details>
+
+
+- Inputing a word would tell the user if the entry is correct of incorrect. The image of the skeleton is built with every incorrect entry.
+
+<details>
+<summary>Word Input</summary>
+
+![Word Input](readme_files/Testing/input_word.gif)
+
+</details>
+
+
+- Inputing a word that is too long or too short will display a message to the user telling them the word is not a valid guess.
+
+<details>
+<summary>Word Input Error</summary>
+
+![Word Input Error](readme_files/Testing/input_word_length_error.gif)
+
+</details>
+
+
+- The game is won when all letter in the hidden word are revealed. The user is then given the option to replay.
+
+<details>
+<summary>Win Game With Letter</summary>
+
+![Win Game With Letter](readme_files/Testing/win_game_with_letter.gif)
+
+</details>
+
+
+- The game is won if the user correctly guesses the hidden word. The user is then given the option to replay.
+
+<details>
+<summary>Win Game With Word</summary>
+
+![Win Game With Word](readme_files/Testing/win_game_with_word.gif)
+
+</details>
+
+
+- If the user runs out of tries and the skeleton becuomes fully formed, the user loses the game. The user is then given the option to replay.
+
+<details>
+<summary>Lose Game</summary>
+
+![Lose Game](readme_files/Testing/lose_game.gif)
+
+</details>
+
+
+- If the user either wins or loses the game, they will be given the option to replay the game. To do this the user must enter Y in the input field.
+
+<details>
+<summary>Restart Game</summary>
+
+![Restart Game](readme_files/Testing/restart_game.gif)
+
+</details>
+
+
+- If the user either wins or loses the game, they will be given the option to replay the game. If they do not wish to replay, they can enter N or any other character in the input field.
+
+<details>
+<summary>End Program</summary>
+
+![End Program](readme_files/Testing/end_game.gif)
+
+</details>
+
+
 [Back to top ⇧](#)
 
 
@@ -253,7 +330,7 @@ Manual testing was conducted on the following elements that appear in the progra
 ## Automated Testing
 
 ### Code Validation
-The [W3C Markup Validator](https://validator.w3.org/) service was used to validate the `HTML` and `CSS` code used. The [JSHint JavaScript Code Quality Tool](https://jshint.com/) was also used to validate the sites `JS` code.
+The [PEP8 Validater](https://pep8online.com/) service 
 
 **Results:**
 
