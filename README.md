@@ -24,7 +24,6 @@
     2. [Manual Testing](#Manual-Testing)
     3. [Automated Testing](#Automated-Testing) 
         - [Code Validation](#Code-Validation)
-        - [Browser Validation](#Browser-Validation)
     4. [User Testing](#User-Testing)
 7. [Deployment](#Deployment)
     1. [Deploying on GitHub Pages](#Deploying-on-GitHub-Pages)
@@ -218,11 +217,11 @@ The developer ran into several issues during the development of the website, wit
   - At the end of each game, regardless of the outcome, the user is given the option to enter Y to replay or N to end the game.
 
 2. As a current user, I want the guess word to follow a certain theme.
-  - The entire game is Halloween themed, with a list of words that follow this theme. From "cemetary" to "ghouls" and plenty more besides.
+  - The entire game is Halloween themed, with a list of words that follow this theme. From "cemetery" to "ghouls" and plenty more besides.
 
 3. As a current user, I want the choice to use different themes.
   - Unfortunately, this feature was not able to be implemented at this stage. 
-  - In future development, the user will have the option to input a number from a list, referencing the theme they wish to play with. This will include seperate pages for each theme's code and seperate lists of words to import.
+  - In future developments, the user will have the option to input a number from a list, referencing the theme they wish to play with. This will include separate pages for each theme's code and separate lists of words to import.
 
 [Back to top ⇧](#)
 
@@ -233,7 +232,7 @@ The developer ran into several issues during the development of the website, wit
 ### Common Elements Testing
 Manual testing was conducted on the following elements that appear in the program:
      
-- Inputing a letter would tell the user if the entry is correct of incorrect. The image of the skeleton is built with every incorrect entry.
+- Inputting a letter would tell the user if the entry is correct or incorrect. The image of the skeleton is built with every incorrect entry.
 
 <details>
 <summary>Letter Input</summary>
@@ -243,7 +242,7 @@ Manual testing was conducted on the following elements that appear in the progra
 </details>
 
      
-- Inputing a non-alpha character will display a message to the user telling them the character is not a valid guess.
+- Inputting a non-alpha character will display a message to the user telling them the character is not a valid guess.
 
 <details>
 <summary>Invalid Character Input</summary>
@@ -253,7 +252,7 @@ Manual testing was conducted on the following elements that appear in the progra
 </details>
 
 
-- Inputing a word would tell the user if the entry is correct of incorrect. The image of the skeleton is built with every incorrect entry.
+- Inputting a word would tell the user if the entry is correct or incorrect. The image of the skeleton is built with every incorrect entry.
 
 <details>
 <summary>Word Input</summary>
@@ -263,7 +262,7 @@ Manual testing was conducted on the following elements that appear in the progra
 </details>
 
 
-- Inputing a word that is too long or too short will display a message to the user telling them the word is not a valid guess.
+- Inputting a word that is too long or too short will display a message to the user telling them the word is not a valid guess.
 
 <details>
 <summary>Word Input Error</summary>
@@ -273,7 +272,7 @@ Manual testing was conducted on the following elements that appear in the progra
 </details>
 
 
-- The game is won when all letter in the hidden word are revealed. The user is then given the option to replay.
+- The game is won when all letters in the hidden word are revealed. The user is then given the option to replay.
 
 <details>
 <summary>Win Game With Letter</summary>
@@ -293,7 +292,7 @@ Manual testing was conducted on the following elements that appear in the progra
 </details>
 
 
-- If the user runs out of tries and the skeleton becuomes fully formed, the user loses the game. The user is then given the option to replay.
+- If the user runs out of tries and the skeleton becomes fully formed, the user loses the game. The user is then given the option to replay.
 
 <details>
 <summary>Lose Game</summary>
@@ -326,92 +325,101 @@ Manual testing was conducted on the following elements that appear in the progra
 [Back to top ⇧](#)
 
 
-<!--
+
 ## Automated Testing
 
 ### Code Validation
-The [PEP8 Validater](https://pep8online.com/) service 
+The [PEP8 Online Checker](https://pep8online.com/) service was used to validate the code written in the word_list.py and run.py files.
 
 **Results:**
 
-- Home Page
+- run file
 
 <details>
-<summary>Home Page HTML Validation Results</summary>
+<summary>run.py Validation results</summary>
 
-![Home Page HTML Validation Results](assets/testing-files/validate-html-home.gif)
+![run.py Validation results](readme_files/Testing/validate-code-run-py.gif)
 
 </details>
 
-- Rules Page
+- word_list file
 
 <details>
-<summary>Rules Page HTML Validation Results</summary>
+<summary>word_list.py Validation results</summary>
 
-![Rules Page HTML Validation Results](assets/testing-files/validate-html-rules.gif)
+![word_list.py Validation results](readme_files/Testing/validate-code-word-list-py.gif)
 
 </details>
 
-- Game Page
-
-<details>
-<summary>Game Page HTML Validation Results</summary>
-
-![Game Page HTML Validation Results](assets/testing-files/validate/validate-html-game.gif)
-
-</details>
-
-- CSS stylesheet
-
-<details>
-<summary>Style sheet Validation results</summary>
-
-![Style sheet Validation results](assets/testing-files/validate-css.gif)
-
-</details>
-
-- JavaScript 
-
-<details>
-<summary>JavaScript Validation results</summary>
-
-![JavaScript Validation results](assets/testing-files/validate-js.gif)
-
-</details>
-
-### Browser Validation
-- Chrome - [Chrome test image](assets/testing-files/validate-chrome.PNG)
-- Edge - [Edge test image](assets/testing-files/validate-edge.PNG)
-- Opera - [Opera test image](assets/testing-files/validate-opera.PNG)
-- Firefox - [Firefox test image](assets/testing-files/validate-firefox.PNG)
 
 ## User testing 
 My husband and the lovely people of Slack were asked to review the site and documentation to point out any bugs and/or user experience issues. Their helpful advice throughout the process led to a few small UX changes to create a better experience. 
 
 ## Deployment
+### GitHub
+This project was developed using [GitPod](https://www.gitpod.io/ "Link to GitPod site"), which was then committed and pushed to GitHub using the GitPod terminal. To create a GitHub repository you must:
 
-This project was developed using [GitPod](https://www.gitpod.io/ "Link to GitPod site"), which was then committed and pushed to GitHub using the GitPod terminal.
+1. Sign in to your account on Github.
+2. On the top left of the home screen, click the 'New' button.
+3. Under 'Repository template', select the required template from the dropdown.
+4. Enter a repository name and description of your project.
+5. You can select if you wish to make this project public or private.
+6. There is an option of adding a README file, a .gitignore file, or choosing a license.
+7. Click the 'Create Repository' button and your repository will be created.
 
-### Deploying on GitHub Pages
-To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
 
-1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/Irishbecky91/Do-you-Sudoku "Link to GitHub Repo").
-3. At the top of the repository, select Settings from the menu items.
-4. Scroll down the Settings page to the "Pages" section.
-5. Under "Source" click the drop-down menu labelled "None" and select "Main".
-6. Upon selection, the page will automatically refresh meaning that the website is now deployed.
-7. Scroll back down to the "Pages" section to retrieve the deployed link.
+
+### GitHub Forking and Cloning
+To fork and clone the project, you will need to follow these steps:
+
+1. Forking a GitHub repository.
+
+    You might fork a project to propose changes to the upstream, or original, repository. In this case, it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. 
+    - Navigate to the repository you wish to fork.
+    - In the top-right corner of the page, click Fork. 
+
+2. Cloning your forked repository.
     
+    - Navigate to your forked repository.
+    - Above the list of files, click 'Code'.
+    - To clone the repository using HTTPS:
+        - Under "Clone with HTTPS", click the copy icon (a clipboard).
+    - To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority:
+        - Click 'Use SSH', then click the copy icon. 
+    - To clone a repository using GitHub CLI:
+        - Click 'Use GitHub CLI', then click the copy icon.
+    - Open Git Bash.
+    - Change the current working directory to the location where you want the cloned directory.
+    - Type git clone, and then paste the URL you copied earlier. It will look like this:
+        git clone https://hostname/YOUR-USERNAME/repo-name
+    - Press Enter. Your local clone will be created.
 
-    
+
+### Deploying on Heroku
+To deploy this project to Heroku from its GitHub repository, the following steps were taken:
+
+1. In your repository, type "pip freeze > requirements.txt" to create the list of dependencies to the requirements.txt file. Save, commit and push your changes to GitHub.
+
+2. Create an account with [Heroku](https://www.heroku.com/ "Link to Heroku site"), selecting Python as the 'Primary development language'.
+
+3. Go to your emails and click the link to verify your email address. The link will bring you to a page where you can create a password. Create a password and log in.
+
+4. On the dashboard, click the 'create new app' button. Enter a unique name for your app and select your region. Click 'Create App'.
+
+5. Go to the settings tab and click 'Reveal Config Vars'. Enter PORT as the KEY value and 8000 as the VALUE value.
+
+6. Click 'Add Buildpack' and select 'Python' and 'Nodejs'. Python must be on the top of the list. Click and drag the buildpacks to the correct positions if needed.
+
+7. Go to the deploy tab and, under 'Deployment method', click 'GitHub' and then 'Connect to GitHub'.
+
+8. In 'Connect to GitHub', search for the repository you wish to use, then click 'Connect'.
+
+9. If you 'Enable Automatic Deploys', Heroku will rebuild the app every time you push a change to GitHub. You can also choose to manually deploy using the 'Deploy Branch' option. Heroku will build the app and when it is finished, click the 'View' button to open the terminal.
+
+
 ## Credits 
 
-### Content
-- Some of the Home Page text was borrowed from an entry on [Britannica's Website](https://www.britannica.com/topic/sudoku "Link to Britannica's page on Sudoku").
-
-### Media
-- The image of Maki Kaji was borrowed from [The Sydney Morning Herald](https://www.smh.com.au/world/asia/sudoku-creator-maki-kaji-who-saw-life-s-joy-in-puzzles-dies-20210818-p58jrt.html "Link to The Sydney Morning Herald's article - Sudoku creator Maki Kaji, who saw life’s joy in puzzles, dies").
+The webpage [GitHub Docs - Fork a repo](https://docs.github.com/en/github-ae@latest/get-started/quickstart/fork-a-repo "Link to a GitHub Docs article on cloning and forking a repository") was used to get instructions on forking and cloning a repository. This information was used in the Deployment section of the README file.
 
 ### Code 
 The developer consulted multiple sites to better understand the code they were trying to implement. The following sites were used on a more regular basis:
