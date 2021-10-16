@@ -1,8 +1,8 @@
 # Funny Bones
 
-![Funny Bones Mockup Images](readme-files/responsive-site.PNG)
+![Funny Bones Mockup Images](readme_files/responsive-site.PNG)
 
-[View the live project here](https://github.com/Irishbecky91/Funny_Bones)
+[View the live project here](https://funny-bones.herokuapp.com/)
 
 ## Table of contents
 1. [Introduction](#Introduction)
@@ -139,10 +139,10 @@ The imagery used in the game is a skeleton named Funny Bones. The image is made 
 
 ## Features
 ### Existing Features
-- **Input Bar** - In order to progress the game, the user will use the input bar to input their next guess, either a letter or word.
+- **Input Bar** - To progress the game, the user will use the input bar to input their next guess, either a letter or word.
 - **Replay Choice** - At the end of each game, win or lose, the user will be offered the choice to play again by entering either Y (yes) or any other character to end the game.
 - **Visual Representation of Lives Remaining** - Each time the user enters an incorrect guess, a section of Funny Bones the skeleton will appear. When Funny Bones is completed, the game is lost.
-- **Instructions and Introduction** - At the beginning of each game, a brief introduction to Funny Bones and the instructions is shown, telling the user how to play the game.
+- **Instructions and Introduction** - At the beginning of each game, a brief introduction to Funny Bones and the instructions are shown, telling the user how to play the game.
 
 ### Features to Implement in the future
 - **Additional Themes**
@@ -152,20 +152,32 @@ The imagery used in the game is a skeleton named Funny Bones. The image is made 
 [Back to top ⇧](#)
 
 
-<!--
+
 ## Issues and Bugs 
 The developer ran into several issues during the development of the website, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
 
-**Grid Difficulty Bug** - A bug was detected early in development as the numbers on the grid did not change when other difficulties were selected. It was found the developer had used .click instead of .checked when coding the event handler. Once changed, the problem was resolved.
+**Skeleton Size Issue** - An issue occured early in development when the image created for the visual representation of the lives with too tall. This was rectified by removing the original image and replacing it with a new image of a crouching skeleton, which also looked more intimidating. Please see the images below.
 
-**Square Selection Bug** - A bug was detected where an empty square, when clicked on, did not register the click. The cause of this was found to be a mislabelling of an element. Instead of a "p" element, the selected class in CSS should have been a "div element. Once this and the square's element was changed to a div, the problem was resolved.
+<details>
+<summary>Skeleton Images</summary>
+    
+![Previously used image of skeleton](readme_files/Images/previously_used_image.PNG)
+![Currently used image of skeleton](readme_files/Images/new_image.PNG)
 
-**Number Transfer Bug** - A bug was detected which affected the squares, causing the number chosen in the number selector to not transfer to the selected square. The problem was the variable selected on line 232 was incorrect, selectedNumber was used instead of selectedSquare. Once this was replaced for the correct variable, the issue was resolved.
+</details>
 
-**Game Won Early Bug** - A bug was detected when playing the game as the game would complete a win sequence early if the first available square was filled in before any others. The problem was the function checkGridComplete was only checking to see if the first square in the grid was filled correctly. This required a complete reworking of the function, creating an empty array to check for and store empty squares. Once the array is emptied, the game is won. This was the final bug which has now been rectified.
+
+**Letters Not Registering In Hidden Word** - A bug was detected where the users correct guess was not showing in the hidden word and was showing as an incorrect entry. This was fixed by defining the word_choice, hidden_word and guess variables as empty strings outside of the functions, then defining them as needed within the function.
+
+**Game Not Choosing A New Word On Restart** - A bug was detected which caused the game to not select a new word from the list of words on restarting the game. Instead it was in a loop of saying the user had won and would you like to play again. This was rectified by adding the defined hidden_word variable and the guessed = False variable to the while loop in the main() function.
+
+**Previously Entered Letters Not Showing in Hidden Word** - A bug was detected when playing the game as the game would show the user a correct entry in the hidden word, then with the next correct entry the first would disappear showing only the newest entry. (eg. If the word was bat and the user entered first B then A, the user would see B-- followed by -A-) This was rectified by moving the hidden_word variable in the while loop of the main() function underneath the word_choice variable. Thie hidden_word variable was also added outside the while loop in the main() function. This meant the code would work on the initial game and on any restarts.
+
+**Deployment Errors** - On deployment to Heroku, a number of issues arose. Most variables were converted from snake_case to UPPERCASE due to a pylinter error. A docstring was added to the top of the page to describe the purpose of the program. There was also an index error which was rectified by redefining the HIDDEN_WORD variable outside the functions as an empty string.
+
+**Skeleton image would not reset on restart** - After deployment to Heroku, an error occured which caused the skeleton image to not reset when restarting the game. The letters and words guessed in the previous game were also preventing the user from entering new letters in the new game. This was rectified by adding the TRIES, guessed_letters and guesed_words to the main function within the while loop.
 
 [Back to top ⇧](#)
-
 
 
 ## Technologies Used
@@ -175,22 +187,18 @@ The developer ran into several issues during the development of the website, wit
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
 
 ### Frameworks, Libraries & Programs Used
-- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
-    - Google fonts was used to import the fonts "Special Elite", "Open Sans", "Oswald" and "Nosifer" into the style.css file. These fonts were used throughout the project.
-- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
-     - Font Awesome was used on almost all pages throughout the website to import icons (e.g. social media icons) for UX purposes.
 - [GitPod](https://gitpod.io/ "Link to GitPod homepage")
      - GitPod was used for writing code, committing, and then pushing to GitHub.
 - [GitHub](https://github.com/ "Link to GitHub")
-     - GitHub was used to store the project after pushing
-- [Balsamiq](https://balsamiq.com/ "Link to Balsamiq homepage")
-     - Balsamiq was used to create the wireframes during the design phase of the project.
+     - GitHub was used to store the project after pushing.
+- [Lucid](https://lucid.app/ "Link to Lucid homepage")
+     - Lucid was used to create a flowchart of information, making the logic of the game easily understood.
 - [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
-     - Am I Responsive was used to see responsive design throughout the process and to generate mockup imagery to be used.
+     - Am I Responsive was used to generate mockup imagery of the terminal showing the game in use on Heroku.
 
 [Back to top ⇧](#)
 
-
+<!--
 
 ## Testing
 ### Testing User Stories
@@ -235,7 +243,7 @@ Manual testing was conducted on the following elements that appear on every page
 <details>
 <summary>Navbar hover effect</summary>
 
-![Navbar hover effect](assets/testing-files/navbar-hover.gif)
+![Navbar hover effect](readme_files/Testing/navbar-hover.gif)
 
 </details>
      
@@ -244,7 +252,7 @@ Manual testing was conducted on the following elements that appear on every page
 <details>
 <summary>Navbar page links</summary>
 
-![Navbar page links](assets/testing-files/navbar-function.gif)
+![Navbar page links](readme_files/Testing/navbar-function.gif)
 
 </details>
      
@@ -255,7 +263,7 @@ Manual testing was conducted on the following elements that appear on every page
 <details>
 <summary>LinkedIn Social Media link</summary>
 
-![LinkedIn Social Media link](assets/testing-files/linkedin.gif)
+![LinkedIn Social Media link](readme_files/Testing/linkedin.gif)
 
 </details>
      
@@ -264,7 +272,7 @@ Manual testing was conducted on the following elements that appear on every page
 <details>
 <summary>GitHub Social Media link</summary>
 
-![GitHub Social Media link](assets/testing-files/github.gif)
+![GitHub Social Media link](readme_files/Testing/github.gif)
 
 </details>
      
@@ -276,7 +284,7 @@ Manual testing was conducted on the following elements of the [Game Page](https:
 <details>
 <summary>Start New Game Button - Game Page</summary>
 
-![Start New Game Button - Game Page](assets/testing-files/start-btn.gif)
+![Start New Game Button - Game Page](readme_files/Testing/start-btn.gif)
 
 </details>
 
@@ -285,7 +293,7 @@ Manual testing was conducted on the following elements of the [Game Page](https:
 <details>
 <summary>Difficulty Grid Layouts - Game Page</summary>
 
-![Difficulty Grid Layouts - Game Page](assets/testing-files/grid-layout.gif)
+![Difficulty Grid Layouts - Game Page](readme_files/Testing/grid-layout.gif)
 
 </details>
      
@@ -294,7 +302,7 @@ Manual testing was conducted on the following elements of the [Game Page](https:
 <details>
 <summary>Timer Settings - Game Page</summary>
 
-![Timer Settings - Game Page](assets/testing-files/timer.gif)
+![Timer Settings - Game Page](readme_files/Testing/timer.gif)
 
 </details>
      
@@ -303,7 +311,7 @@ Manual testing was conducted on the following elements of the [Game Page](https:
 <details>
 <summary>Assign Number To Square - Game Page</summary>
 
-![Assign Number To Square - Game Page](assets/testing-files/assign-number.gif)
+![Assign Number To Square - Game Page](readme_files/Testing/assign-number.gif)
 
 </details>
      
