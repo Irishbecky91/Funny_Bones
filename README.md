@@ -435,4 +435,4 @@ The developer consulted multiple sites to better understand the code they were t
 - I would like to thank the kind and patient tutors of the tutor support system who helped when I was struggling with a piece of code, specifically John and Sheryl.
 - Lastly, I would like to extend my deepest gratitude to the amazing people in Slack who helped me rigorously test every aspect of my site.
 
-[Back to top ⇧](#) -->
+[Back to top ⇧](#)
