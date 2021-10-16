@@ -181,9 +181,7 @@ The developer ran into several issues during the development of the website, wit
 
 ## Technologies Used
 ### Main Languages Used
-- [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
-- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to Python Wiki")
 
 ### Frameworks, Libraries & Programs Used
 - [GitPod](https://gitpod.io/ "Link to GitPod homepage")
