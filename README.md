@@ -156,7 +156,7 @@ The imagery used in the game is a skeleton named Funny Bones. The image is made 
 ## Issues and Bugs 
 The developer ran into several issues during the development of the website, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
 
-**Skeleton Size Issue** - An issue occured early in development when the image created for the visual representation of the lives with too tall. This was rectified by removing the original image and replacing it with a new image of a crouching skeleton, which also looked more intimidating. Please see the images below.
+**Skeleton Size Issue** - An issue occurred early in development when the image that was created for the visual representation of the lives with too tall. This was rectified by removing the original image and replacing it with a new image of a crouching skeleton, which also looked more intimidating. Please see the images below.
 
 <details>
 <summary>Skeleton Images</summary>
@@ -167,15 +167,15 @@ The developer ran into several issues during the development of the website, wit
 </details>
 
 
-**Letters Not Registering In Hidden Word** - A bug was detected where the users correct guess was not showing in the hidden word and was showing as an incorrect entry. This was fixed by defining the word_choice, hidden_word and guess variables as empty strings outside of the functions, then defining them as needed within the function.
+**Letters Not Registering In Hidden Word** - A bug was detected where the user's correct guess was not showing in the hidden word and was showing as an incorrect entry. This was fixed by defining the word_choice, hidden_word and guess variables as empty strings outside of the functions, then defining them as needed within the function.
 
-**Game Not Choosing A New Word On Restart** - A bug was detected which caused the game to not select a new word from the list of words on restarting the game. Instead it was in a loop of saying the user had won and would you like to play again. This was rectified by adding the defined hidden_word variable and the guessed = False variable to the while loop in the main() function.
+**Game Not Choosing A New Word On Restart** - A bug was detected which caused the game to not select a new word from the list of words on restarting the game. Instead, it was in a loop of saying the user had won and would you like to play again. This was rectified by adding the defined hidden_word variable and the guessed = False variable to the while loop in the main() function.
 
-**Previously Entered Letters Not Showing in Hidden Word** - A bug was detected when playing the game as the game would show the user a correct entry in the hidden word, then with the next correct entry the first would disappear showing only the newest entry. (eg. If the word was bat and the user entered first B then A, the user would see B-- followed by -A-) This was rectified by moving the hidden_word variable in the while loop of the main() function underneath the word_choice variable. Thie hidden_word variable was also added outside the while loop in the main() function. This meant the code would work on the initial game and on any restarts.
+**Previously Entered Letters Not Showing in Hidden Word** - A bug was detected when playing the game as the game would show the user a correct entry in the hidden word, then with the next correct entry the first would disappear showing only the newest entry. (eg. If the word was BAT and the user entered first B then A, the user would see B-- followed by -A-) This was rectified by moving the hidden_word variable in the while loop of the main() function underneath the word_choice variable. Thie hidden_word variable was also added outside the while loop in the main() function. This meant the code would work on the initial game and any restarts.
 
-**Deployment Errors** - On deployment to Heroku, a number of issues arose. Most variables were converted from snake_case to UPPERCASE due to a pylinter error. A docstring was added to the top of the page to describe the purpose of the program. There was also an index error which was rectified by redefining the HIDDEN_WORD variable outside the functions as an empty string.
+**Deployment Errors** - On deployment to Heroku, several issues arose. Most variables were converted from snake_case to UPPERCASE due to a pylinter error. A docstring was added to the top of the page to describe the purpose of the program. There was also an index error which was rectified by redefining the HIDDEN_WORD variable outside the functions as an empty string.
 
-**Skeleton image would not reset on restart** - After deployment to Heroku, an error occured which caused the skeleton image to not reset when restarting the game. The letters and words guessed in the previous game were also preventing the user from entering new letters in the new game. This was rectified by adding the TRIES, guessed_letters and guesed_words to the main function within the while loop.
+**Skeleton image would not reset on restart** - After deployment to Heroku, an error occurred which caused the skeleton image to not reset when restarting the game. The letters and words guessed in the previous game were also preventing the user from entering new letters in the new game. This was rectified by adding the TRIES, guessed_letters and guesed_words to the main function within the while loop.
 
 [Back to top ⇧](#)
 
@@ -198,7 +198,7 @@ The developer ran into several issues during the development of the website, wit
 
 [Back to top ⇧](#)
 
-<!--
+
 
 ## Testing
 ### Testing User Stories
@@ -206,46 +206,34 @@ The developer ran into several issues during the development of the website, wit
 #### Current User Goals:
 
 #### New User Goals:
-1. As a new user, I want to easily navigate the site intuitively. 
-  - The navigation bar brings users to each of the three site pages. It is clearly laid out with easy to read buttons.
+1. As a new user, I want to see clear instructions for gameplay.
+  - when the program is run, an introduction appears, telling the user how to play the game.
   
-2. As a new user, I want the instructions to be easily found, clear and concise.
-  - The rules of Sudoku are clearly laid out on the instructions/rules page. 
-  - The key points of the rules are displayed using bullet points.
+2. As a new user, I want to see a visual representation of my remaining lives.
+  - On entering a wrong letter or word, a section of Funny Bones the skeleton is created. When the user has run out of tries, the skeleton will be fully formed.
 
-3. As a new user, I want attractive and relevant visuals and colour schemes that work with the content.
-  - There is a relaxed neutral colour scheme across the site.
-  - The user has a choice of theme when starting a new game. 
-  - The theme choices change the colours of the header, footer and body of the page, depending on the selected theme.
+3. As a new user, I want the ability to replay the game.
+  - At the end of each game, regardless of the outcome, the user is given the option to enter Y to replay or N to end the game.
 
 #### Current User
-1. As a current user, I want to have a variety of difficulty options, to challenge myself.
-  - There are four available difficulties for the user to choose from, easy, medium, hard and hardcore.
-  - There are four premade puzzle layouts that change according to the users chosen difficulties.
+1. As a current user, I want the ability to replay the game.
+  - At the end of each game, regardless of the outcome, the user is given the option to enter Y to replay or N to end the game.
 
-2. As a current user, I want to have an option of a timed game.
-  - There are three available timer options for the user to choose from, 3 minutes, 5 minutes and 10 minutes
-  - The chosen timer begins as soon as the user hits the Start New Game button and counts back from the chosen time frame.
+2. As a current user, I want the guess word to follow a certain theme.
+  - The entire game is Halloween themed, with a list of words that follow this theme. From "cemetary" to "ghouls" and plenty more besides.
 
-3. As a current user, I want to see randomly generated puzzle boards for each difficulty level.
+3. As a current user, I want the choice to use different themes.
   - Unfortunately, this feature was not able to be implemented at this stage. 
-  - As an alternative, a premade puzzle layout was made for each of the four difficulty selections.
+  - In future development, the user will have the option to input a number from a list, referencing the theme they wish to play with. This will include seperate pages for each theme's code and seperate lists of words to import.
 
 [Back to top ⇧](#)
+
+
 
 ## Manual Testing
 
 ### Common Elements Testing
-Manual testing was conducted on the following elements that appear on every page:
-
-- Hovering over the Navigation bar elements will trigger the `hover` effect, highlighting the icon for the user.
-
-<details>
-<summary>Navbar hover effect</summary>
-
-![Navbar hover effect](readme_files/Testing/navbar-hover.gif)
-
-</details>
+Manual testing was conducted on the following elements that appear in the program:
      
 - Clicking on the Navigation Bar's links will bring the user to the specified page.
 
@@ -256,115 +244,12 @@ Manual testing was conducted on the following elements that appear on every page
 
 </details>
      
-- Clicking on the Social Media links will open a new tab
 
-  LinkedIn:
-
-<details>
-<summary>LinkedIn Social Media link</summary>
-
-![LinkedIn Social Media link](readme_files/Testing/linkedin.gif)
-
-</details>
-     
-  GitHub:
-
-<details>
-<summary>GitHub Social Media link</summary>
-
-![GitHub Social Media link](readme_files/Testing/github.gif)
-
-</details>
-     
-### Game Page
-Manual testing was conducted on the following elements of the [Game Page](https://irishbecky91.github.io/Do-you-Sudoku/game.html):
-
-- Clicking the Start New Game button will create a new grid using the user's chosen settings.
-
-<details>
-<summary>Start New Game Button - Game Page</summary>
-
-![Start New Game Button - Game Page](readme_files/Testing/start-btn.gif)
-
-</details>
-
-- Selecting the different difficulties changes the layout of the grid.
-
-<details>
-<summary>Difficulty Grid Layouts - Game Page</summary>
-
-![Difficulty Grid Layouts - Game Page](readme_files/Testing/grid-layout.gif)
-
-</details>
-     
-- Selecting the different time settings will change the length of the timer.
-
-<details>
-<summary>Timer Settings - Game Page</summary>
-
-![Timer Settings - Game Page](readme_files/Testing/timer.gif)
-
-</details>
-     
-- Selecting a square in the grid and a number in the number selector moves that number to the chosen square.
-
-<details>
-<summary>Assign Number To Square - Game Page</summary>
-
-![Assign Number To Square - Game Page](readme_files/Testing/assign-number.gif)
-
-</details>
-     
-- When an incorrect number is assigned to a box, the user loses a life.
-
-<details>
-<summary>Lose A Life - Game Page</summary>
-
-![Lose A Life - Game Page](assets/testing-files/lives.gif)
-
-</details>
-
-- Show the win and lose messages when the game ends.
-
-<details>
-<summary>Game Over - Game Page</summary>
-
-![Game Over - Game Page](assets/testing-files/game-over.gif)
-
-</details>
-     
-### Responsiveness
-Manual testing was conducted on all three site pages for responsiveness:
-
-- Responsivenss of Home Page.
-
-<details>
-<summary>Resposiveness - Home Page</summary>
-
-![Resposiveness - Home Page](assets/testing-files/responsive-home.gif)
-
-</details>
-     
-- Responsivenss of Instructions/Rules Page.
-
-<details>
-<summary>Resposiveness - Rules Page</summary>
-
-![Resposiveness - Rules Page](assets/testing-files/responsive-rules.gif)
-
-</details>
-
-- Responsivenss of Game Page.
-
-<details>
-<summary>Resposiveness - Game Page</summary>
-
-![Resposiveness - Game Page](assets/testing-files/responsive-game.gif)
-
-</details>
      
 [Back to top ⇧](#)
 
+
+<!--
 ## Automated Testing
 
 ### Code Validation

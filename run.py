@@ -89,8 +89,8 @@ def input_word(GUESS):
     else:
         GUESSED = True
         HIDDEN_WORD = WORD_CHOICE
-        print("Congratulations, you won!! You defeated Funny Bones before \
-            he could rise up and take over Halloween.")
+        print("Congratulations, you won!! You defeated Funny Bones before")
+        print("he could rise up and take over Halloween.")
 
 
 def users_input(GUESS):
