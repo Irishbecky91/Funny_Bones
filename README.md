@@ -1,6 +1,6 @@
 # Funny Bones
 
-![Funny Bones Mockup Images](readme_files/responsive-site.PNG)
+![Funny Bones Mockup Images](readme_files/Images/responsive.PNG)
 
 [View the live project here](https://funny-bones.herokuapp.com/)
 
@@ -185,16 +185,15 @@ The developer ran into several issues during the development of the website, wit
 
 ### Frameworks, Libraries & Programs Used
 - [GitPod](https://gitpod.io/ "Link to GitPod homepage")
-     - GitPod was used for writing code, committing, and then pushing to GitHub.
+    - GitPod was used for writing code, committing, and then pushing to GitHub.
 - [GitHub](https://github.com/ "Link to GitHub")
-     - GitHub was used to store the project after pushing.
+    - GitHub was used to store the project after pushing.
 - [Lucid](https://lucid.app/ "Link to Lucid homepage")
-     - Lucid was used to create a flowchart of information, making the logic of the game easily understood.
+    - Lucid was used to create a flowchart of information, making the logic of the game easily understood.
 - [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
-     - Am I Responsive was used to generate mockup imagery of the terminal showing the game in use on Heroku.
+    - Am I Responsive was used to generate mockup imagery of the terminal showing the game in use on Heroku.
 
 [Back to top ⇧](#)
-
 
 
 ## Testing
