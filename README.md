@@ -428,8 +428,8 @@ The developer consulted multiple sites to better understand the code they were t
 ## Acknowledgements
 
 - I would like to thank my family for their valued opinions and critic during the process of design and development.
-- I would like to thank my tutor, Kasia, and my mentor, Seun, for their invaluable help and guidance throughout the process.
-- I would like to thank the kind and patient tutors of the tutor support system who helped when I was struggling with a piece of code, specifically John and Sheryl.
+- I would like to thank my tutor, Kasia, and my mentor, Chris, for their invaluable help and guidance throughout the process.
+- I would like to thank the kind and patient tutors of the tutor support system who helped when I was struggling with a piece of code, specifically Michael and Scott.
 - Lastly, I would like to extend my deepest gratitude to the amazing people in Slack who helped me rigorously test every aspect of my site.
 
 [Back to top ⇧](#)
